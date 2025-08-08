@@ -1,0 +1,95 @@
+body {
+    font-family: 'PT Sans', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.controls button {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.controls button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.event-dot {
+    cursor: pointer;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.event-dot:hover {
+    stroke-width: 3;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.event-label {
+    font-size: 12px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.date-label {
+    font-size: 10px;
+    fill: #666;
+    pointer-events: none;
+}
+
+.timeline-axis {
+    stroke: #ddd;
+    stroke-width: 2;
+}
+
+.file-input {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.file-input input {
+    margin-right: 10px;
+}
+
+.status {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
