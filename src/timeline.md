@@ -15,6 +15,7 @@ theme: air
 import { timeline } from "./timeline.js" 
 ```
 
+
 <!-- data -->
 ```js
 const timelineData = FileAttachment("./data/intro_trump2.csv").csv({ typed: true });
