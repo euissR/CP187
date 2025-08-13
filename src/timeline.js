@@ -20,7 +20,7 @@ export function timeline(
     .sort((a, b) => a.id - b.id);
 
   // Set up dimensions
-  const margin = { top: 120, right: 200, bottom: 80, left: 200 };
+  const margin = { top: 120, right: 200, bottom: 80, left: 100 };
   const innerWidth = width - margin.left - margin.right;
   const height = window.innerHeight * 0.8;
   const innerHeight = height - margin.top - margin.bottom;
@@ -70,10 +70,11 @@ export function timeline(
     .attr("text-anchor", "middle")
     .style("font-size", "14px")
     .style("font-weight", "600")
-    .style("fill", "#333")
+    // .style("fill", "#333")
+    .style("fill", (d) => colorScale(d.actorSimple))
     .call(function (selection) {
       selection.each(function (d) {
-        d3.select(this).call(wrapText, d, 20);
+        d3.select(this).call(wrapText, d, 20, d);
       });
     });
 
@@ -191,7 +192,7 @@ export function timeline(
       )
       .style("pointer-events", "none")
       .style("opacity", 0)
-      .call(wrapText, d.event, 25); // 30 characters per line
+      .call(wrapText, d.event, 18, d); // 30 characters per line
 
     // Add date label (to the left)
     const dateLabel = eventGroup
@@ -260,7 +261,7 @@ export function timeline(
   }
 
   // helper function to wrap text in labels
-  function wrapText(text, content, maxChars) {
+  function wrapText(text, content, maxChars, dataObj) {
     const words = content.split(/\s+/);
     const lines = [];
     let currentLine = "";
@@ -291,6 +292,7 @@ export function timeline(
       .append("tspan")
       .attr("x", x) // Use original x position
       .attr("dy", (d, i) => (i === 0 ? `${yOffset}em` : `${lineHeight}em`))
+      .style("fill", colorScale(dataObj.actorSimple)) // Use the data object here
       .text((d) => d);
   }
 

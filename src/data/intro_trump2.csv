@@ -1,61 +1,22 @@
-id,date,event,type,graphs to add as pop-up,actor,area,actor_simple,size,x,day,week,year
-1,2024-12-23,Trump suggests the US should take over Greenland and Panama Canal,Announcement/speech,NA,Trump,Relations with allies,US,1,-1,1,-1,2024
-2,2025-01-07,Trump suggests annexing Canada as 51st US state,Announcement/speech,NA,Trump,Relations with allies,US,1,-1,2,1,2025
-3,2025-01-20,US withdrawal from WHO and Paris Climate Agreeent,Policy change/action,NA,US government,Relations with rest of the world,US,1,-1,1,3,2025
-4,2025-01-20,"EO 14169 freezes non-essential foreign aid for 90 days, starts review of USAID",Policy change/action,"USAID cuts (data in ""Aid cuts"" sheet in ""Measures of confidence in US - Ioana"")",US government,Relations with rest of the world,US,1,-1,1,3,2025
-5,2025-01-24,"In phone call with Danish president, Trump refuses to back down from desire to take over Greenland",Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,5,4,2025
-6,2025-01-26,US threatens 25% tariffs on Colombia after President Petro refuses to accept repatriation flights (removed after one day),Announcement/speech,NA,Trump,Relations with allies,US,1,-1,7,4,2025
-7,2025-02-01,US imposes 25% tariffs on Canadian and Mexican goods,Policy change/action,"Tariff rate timelines (use sheets 1 and 2 from ""tariff rates"" file)",US government,Trade,US,1,-1,6,5,2025
-8,2025-02-11,"At AI summit in Paris, Vance warned Europeans to dismantle regulations on technology",Announcement/speech,NA,Vance,Relations with allies,US,1,-1,2,6,2025
-11,2025-02-12,Weimar + statement expressing continued support to Ukraine,Visit/meeting/phone call,NA,European leaders,Russia-Ukraine,European leaders,2,1,3,7,2025
-9,2025-02-12,"At NATO, Hegseth announces reduction in US contributions to European deterrence, no Ukraine membership in NATO, no US backstop for European troops in Ukraine",Announcement/speech,NA,Hegseth,Relations with allies,US,1,-1,3,7,2025
-10,2025-02-12,"Trump speaks with Putin over the phone, agreeing to begin negotiations",Visit/meeting/phone call,NA,Trump,Russia-Ukraine,US,1,-1,3,7,2025
-12,2025-02-14,"Vance attacks EU leaders at Munich Security Conference for ""restricting free speech""",Announcement/speech,NA,Vance,Relations with allies,US,1,-1,5,7,2025
-13,2025-02-18,First Rubio-Lavrov meeting in Riyad,Visit/meeting/phone call,NA,Rubio,Russia-Ukraine,US,1,-1,2,7,2025
-14,2025-02-18,"Trump claims Zelensky is to blame for the war, calling him ""a dictator without elections""",Announcement/speech,NA,Trump,Russia-Ukraine,US,1,-1,2,7,2025
-15,2025-02-24,Macron visits the White House,Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,1,8,2025
-16,2025-02-24,"At UN General Assembly, US votes with Russia and North Korea against a Resolution condemning Russia's invasion of Ukraine",Policy change/action,"UNGA voting map (""UNGA vote 24 Feb 2025""",US government,Russia-Ukraine,US,1,-1,1,8,2025
-17,2025-02-26,Rubio cancels meeting with HRVP Kallas in Washington,Visit/meeting/phone call,NA,Rubio,Relations with allies,US,1,-1,3,9,2025
-18,2025-02-27,UK prime minister Starmer visits the White House,Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,4,9,2025
-19,2025-02-28,"Trump and Vance argue with Zelensky during White House visit, refuse to sign critical minerals agreement",Visit/meeting/phone call,NA,Trump,Russia-Ukraine,US,1,-1,5,9,2025
-20,2025-03-02,"First meeting of the ""coalitions of the willing"" for Ukraine in London",Visit/meeting/phone call,NA,European leaders,Russia-Ukraine,European leaders,2,1,7,9,2025
-21,2025-03-03,US halts military assistance and intelligence sharing to Ukraine,Policy change/action,NA,US government,Russia-Ukraine,US,1,-1,1,9,2025
-22,2025-03-06,EU emergency Council,Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,4,10,2025
-23,2025-03-11,"In Jeddah, Ukraine accepts US ceasefire proposal, US resumes intelligence sharing and military assistance",Visit/meeting/phone call,NA,Rubio,Russia-Ukraine,US,1,-1,2,10,2025
-25,2025-03-12,EU announces plan for 50% retaliatory tariffs on  21 billion EUR of US goods,Announcement/speech,NA,European leaders,Trade,European leaders,2,1,3,11,2025
-24,2025-03-12,"US imposes 25% tariffs on EU steel amd aluminum, removing exemptions.",Policy change/action,NA,US government,Trade,US,1,-1,3,11,2025
-26,2025-03-20,EU Council approves Rearm Europe/Readiness 2030 proposal,Policy change/action,NA,European leaders,Relations with allies,European leaders,2,1,4,12,2025
-27,2025-03-24,"Leaked Signal chat between several members of Trump's cabinet reveals disdain for ""pathetic"" European allies",Announcement/speech,NA,Hegseth,Relations with allies,US,1,-2,1,12,2025
-28,2025-03-28,"Vance and Waltz visit Pituffik Space Base in Greenland, and Vance attacks Denmark for not being a good ally",Visit/meeting/phone call,NA,Vance,Relations with allies,US,1,-1,5,13,2025
-29,2025-03-29,Finnish president Stubb meets Trump at golf course,Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,6,13,2025
-30,2025-04-02,"""Liberation Day"": US announces 10% universal tariffs and reciprocal tariffs on all countries",Policy change/action,NA,US government,Trade,US,1,-1,3,14,2025
-31,2025-04-08,EU agrees retaliation package against US tariffs,Policy change/action,NA,European leaders,Trade,European leaders,2,1,2,14,2025
-33,2025-04-09,EU suspends retaliatory tariffs for 90 days,Policy change/action,NA,European leaders,Trade,European leaders,2,1,3,15,2025
-32,2025-04-09,Trump pauses reciprocal tariffs for 90 days for all countries excluding China,Policy change/action,"Dollar, S&P 500  (data in ""S&P 500"" an ""DXY"" sheets in ""Measures of confidence in US - Ioana"")",Trump,Trade,US,1,-1,3,15,2025
-34,2025-04-11,Witkoff meets with Putin in St Petersburg,Visit/meeting/phone call,NA,Witkoff,Russia-Ukraine,US,1,-1,5,15,2025
-35,2025-04-17,Rubio and Witkoff visit Paris for Ukraine peace talks,Visit/meeting/phone call,NA,European leaders,Russia-Ukraine,European leaders,2,1,4,16,2025
-36,2025-04-17,Italian PM Meloni visits White House,Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,4,16,2025
-37,2025-04-23,US presents final ceasefire proposal to Russia and Ukraine,Announcement/speech,NA,Rubio,Russia-Ukraine,US,1,-2,3,17,2025
-38,2025-04-26,Trump meets with Zelenskyy during Pope Francis's funeral in Rome,Visit/meeting/phone call,NA,Trump,Russia-Ukraine,US,1,-1,6,17,2025
-39,2025-04-30,US and Ukraine sign Mineral Resources Agreement,Policy change/action,NA,US government,Russia-Ukraine,US,1,-1,3,18,2025
-41,2025-05-12,"Trump calls the EU ""nastier than China"" and threatens 50% tariffs in June",Announcement/speech,NA,Trump,Trade,US,1,-1,1,19,2025
-42,2025-05-13,"First official visit abroad by Trump in his second mandate, to the Middle East",Visit/meeting/phone call,NA,Trump,Relations with allies,US,1,-1,2,19,2025
-43,2025-05-19,Trump's phone call with Putin,Visit/meeting/phone call,NA,Trump,Russia-Ukraine,US,1,-1,1,20,2025
-44,2025-05-20,"During White House visit, Trump criticises South African President Ramaphosa for ""genocide"" against White South Africans",Visit/meeting/phone call,NA,Trump,Relations with rest of the world,US,1,-1,2,20,2025
-45,2025-05-26,European Commission President Von der Leyen holds phone call with Trump,Visit/meeting/phone call,NA,European leaders,Trade,European leaders,2,1,1,21,2025
-46,2025-05-26,US agrees to pause EU tariffs until July,Policy change/action,NA,Trump,Trade,US,1,-1,1,21,2025
-47,2025-05-26,"Trump calls Putin ""absolutely crazy"" for continuing assaults on Ukraine in the middle of peace negotiations",Announcement/speech,NA,Trump,Russia-Ukraine,US,1,-1,1,21,2025
-49,2025-06-04,"US reinstates ""travel ban"" for 41 countries",Policy change/action,"Number of flights to US (data in ""Visits or flights to the US"" sheets in ""Measures of confidence in US - Ioana"" - compare overall flights 2024 to overall flights 2025)",US government,Relations with rest of the world,US,1,-1,3,23,2025
-51,2025-06-05,German Chancellor Mertz visits the White House,Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,4,23,2025
-50,2025-06-05,Trump speaks to Xi Jinping for the first time since re-election,Visit/meeting/phone call,NA,Trump,Relations with rest of the world,US,1,-1,4,23,2025
-52,2025-06-16,"At G7 Summit in Canada, US criticises decision to exclude Russia from format",Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,1,24,2025
-53,2025-06-20,Trumps claims to have brokered a ceasefire between DRC and Rwanda,Announcement/speech,NA,Trump,Relations with rest of the world,US,1,-1,5,25,2025
-54,2025-06-21,US strikes multiple nuclear sites in Iran,Policy change/action,Strikes under Trump vs under Biden?,US government,Relations with rest of the world,US,1,-1,6,25,2025
-55,2025-06-24,US announces ceasefire between Iran and Israel,Announcement/speech,NA,Trump,Relations with allies,US,1,-1,2,25,2025
-56,2025-06-25,"Trump attends NATO Summit in the Hague, where allies agree to spend 5% of GDP on defence; Trump meets with Zelensky",Visit/meeting/phone call,NA,European leaders,Relations with allies,European leaders,2,1,3,26,2025
-57,2025-06-30,Pentagon halts shipments of weapons to Ukraine as part of stockpile review,Policy change/action,NA,Hegseth,Russia-Ukraine,US,1,-2,1,26,2025
-58,2025-07-07,US starts sending letters to countries announcing new tariffs from 1 August,Policy change/action,NA,US government,Trade,US,1,-1,1,27,2025
-59,2025-07-08,"Trump calls Putin's promises ""meaningless"", announces resumption of weapons shipments to Ukraine",Policy change/action,NA,Trump,Russia-Ukraine,US,1,-2,2,27,2025
-60,2025-07-12,"Trump sends ""letter"" to EU announcing tariffs of 30% from 1 August",Policy change/action,NA,European leaders,Trade,European leaders,2,1,6,28,2025
-61,2025-07-14,Trump announces plan to sell new weapons to Ukraine through NATO; threatens Russia with 100% secondary sanctions if no peace is made in 50 days,Announcement/speech,NA,European leaders,Russia-Ukraine,European leaders,2,1,1,28,2025
-62,2025-07-14,EU prepares retaliation package of 72 billion EUR of US goods,Policy change/action,NA,European leaders,Trade,European leaders,2,1,1,28,2025
+id,date,event,graph,area,actor_simple
+1,2024-12-23,"Trump proposes annexing Greenland, Panama",NA,Relations with allies,United States
+4,2025-01-20,Freeze on US foreign aid,"USAID cuts (data in ""Aid cuts"" sheet in ""Measures of confidence in US - Ioana"")",Relations with rest of the world,United States
+7,2025-02-01,"First tariffs on Canada, Mexico, China","Tariff rate timeline (use sheet 1 from ""tariff rates"" file)",Trade,United States
+9,2025-02-12,"Hegseth at NATO announces new US posture on Ukraine, European defence",NA,Relations with allies,United States
+10,2025-02-12,Trump speaks to Putin,NA,Russia-Ukraine,United States
+12,2025-02-14,Vance's Munich speech,NA,Relations with allies,United States
+16,2025-02-24,US sides with Russia at UN General Assembly,"UNGA voting map (""UNGA vote 24 Feb 2025""",Russia-Ukraine,United States
+17,2025-02-26,Rubio cancels meeting with Kallas,NA,Relations with allies,United States
+19,2025-02-28,"Trump-Zelensky Oval Office clash, temporary intel freeze",NA,Russia-Ukraine,United States
+22,2025-03-06,EU emergency Council,NA,Relations with allies,European leaders
+30,2025-04-02,Liberation Day: 20% tariff on EU,"Tariff rate timeline (use sheet 1 from ""tariff rates"" file)",Trade,United States
+32,2025-04-09,Trump pauses reciproca tariffs,"Dollar, S&P 500  (data in ""S&P 500"" an ""DXY"" sheets in ""Measures of confidence in US - Ioana"")",Trade,United States
+39,2025-04-30,US-Ukraine mineral deal,NA,Russia-Ukraine,United States
+41,2025-05-12,Trump threatens 50% tariffs on EU,NA,Trade,United States
+49,2025-06-04,Travel ban reinstated,"Number of flights to US (data in ""Visits or flights to the US"" sheets in ""Measures of confidence in US - Ioana"" - compare overall flights 2024 to overall flights 2025)",Relations with rest of the world,United States
+54,2025-06-21,US strikes on Iran,NA,Relations with rest of the world,United States
+57,2025-06-30,Pentagon halts weapon shipments to Ukraine (for 1 week),NA,Russia-Ukraine,United States
+60,2025-07-12,"Trump sends ""letter"" announcing 30% tariffs on EU",NA,Trade,European leaders
+61,2025-07-14,"Trump threatens ""secondary tariffs"" on buyers of Russian oil",NA,Russia-Ukraine,European leaders
+64,2025-07-27,EU-US trade deal (15% tariff),"US tariffs on EU (use file ""US tariffs on EU"" sent via Teams)",Trade,European leaders
+71,2025-08-15,Trump-Putin summit in Alaska,NA,Russia-Ukraine,United States
