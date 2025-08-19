@@ -25,14 +25,14 @@ const timelineData = FileAttachment("./data/intro_trump2.csv").csv({
 ```
 
 ```js
-const animationDuration = view(
-  Inputs.range([100, 10000], {
-    label: "Animation Duration (ms)",
-    value: 120000 / timelineData.length,
-    step: 100,
-  })
-);
-// const animationDuration = 120000 / timelineData.length;
+// const animationDuration = view(
+//   Inputs.range([100, 10000], {
+//     label: "Animation Duration (ms)",
+//     value: 120000 / timelineData.length,
+//     step: 100,
+//   })
+// );
+const animationDuration = 120000 / timelineData.length;
 ```
 
 <!-- # Trump 2.0 timeline -->
