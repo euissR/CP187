@@ -28,9 +28,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## {data-background="intro_op_country.jpg" data-background-size="contain"}
 
-## {data-background-iframe="https://euissr.github.io/CP187/slope_low" data-background-interactive="true"}
-## {data-background-iframe="https://euissr.github.io/CP187/slope_low-mid" data-background-interactive="true"}
-## {data-background-iframe="https://euissr.github.io/CP187/slope_high" data-background-interactive="true"}
+## {data-background-iframe="https://euissr.github.io/CP187/slope" data-background-interactive="true"}
 
 ## {data-background=#1d3956}
 
