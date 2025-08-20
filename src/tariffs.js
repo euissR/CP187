@@ -109,22 +109,23 @@ export function tariffs(
         grid: true,
         gridColor: "#e0e0e0",
         gridOpacity: 0.7,
+        label: null,
       },
       marks: [
-        Plot.line(currentData, {
+        Plot.areaY(currentData, {
           x: "date",
           y: "value",
-          stroke: "#999",
-          strokeWidth: 1,
+          fill: "#999",
+          // strokeWidth: 2,
         }),
         // Highlight recent data (from 2024)
-        Plot.line(
+        Plot.areaY(
           currentData.filter((d) => d.date.getFullYear() >= 2024),
           {
             x: "date",
             y: "value",
-            stroke: "#309ebe",
-            strokeWidth: 2,
+            fill: "#309ebe",
+            // strokeWidth: 3,
           }
         ),
         // Add 2025 label if we have 2025 data
@@ -184,12 +185,13 @@ export function tariffs(
         grid: true,
         gridColor: "#e0e0e0",
         gridOpacity: 0.7,
+        label: null,
       },
       marks: [
-        Plot.line(currentData, {
+        Plot.areaY(currentData, {
           x: "date",
           y: "value",
-          stroke: "#309ebe",
+          fill: "#309ebe",
           strokeWidth: 2,
         }),
       ],
