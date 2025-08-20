@@ -57,7 +57,7 @@ export function slopeTimer(data, { width = 1000 } = {}) {
       // marginRight: width / 8,
       marginTop: 40,
       marginBottom: 40,
-      title: `${currentLabel} change in views on the United States`,
+      title: "Change in views on the United States",
       subtitle: "2024-2025, % of favorable views",
       caption: "Data: PEW, 2025",
       x: {
