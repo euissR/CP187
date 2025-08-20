@@ -1,0 +1,24 @@
+Country,year,value,iso3c,NAME_ENGL,diff
+Argentina,2025,52,ARG,Argentina,-1
+Australia,2025,29,AUS,Australia,-11
+Brazil,2025,56,BRA,Brazil,-8
+Canada,2025,34,CAN,Canada,-20
+France,2025,36,FRA,France,-10
+Germany,2025,33,DEU,Germany,-16
+Greece,2025,45,GRC,Greece,-3
+Hungary,2025,60,HUN,Hungary,8
+India,2025,54,IND,India,3
+Israel,2025,83,ISR,Israel,6
+Italy,2025,47,ITA,Italy,-9
+Japan,2025,55,JPN,Japan,-15
+Kenya,2025,62,KEN,Kenya,-16
+Mexico,2025,29,MEX,Mexico,-32
+Netherlands,2025,29,NLD,Netherlands,-19
+Nigeria,2025,78,NGA,Nigeria,6
+Poland,2025,55,POL,Poland,-31
+South Africa,2025,50,ZAF,South Africa,1
+South Korea,2025,61,KOR,South Korea,-16
+Spain,2025,31,ESP,Spain,-17
+Sweden,2025,19,SWE,Sweden,-28
+Turkey,2025,25,TUR,Türkiye,NA
+United Kingdom,2025,50,GBR,United Kingdom,-4

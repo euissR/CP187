@@ -4,7 +4,7 @@ output:
   revealjs::revealjs_presentation:
     theme: white
     highlight: pygments
-    transition: fade
+    transition: convex
     center: true
     css: presentation.css
     includes:

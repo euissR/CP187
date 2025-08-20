@@ -35,7 +35,7 @@ export function tariffs(
   // Chart dimensions
   const longChartWidth = (width * 2) / 3;
   const shortChartWidth = width / 3;
-  const chartHeight = 400;
+  const chartHeight = 600;
 
   // Create long-term chart container
   const longContainer = container
