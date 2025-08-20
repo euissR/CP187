@@ -51,10 +51,10 @@ export function slopeTimer(data, { width = 1000 } = {}) {
       .sort((a, b) => b.value2025 - a.value2025);
 
     const plot = Plot.plot({
-      width: width,
+      width: width / 2,
       height: 600,
-      marginLeft: width / 4,
-      marginRight: width / 4,
+      // marginLeft: width / 8,
+      // marginRight: width / 8,
       marginTop: 40,
       marginBottom: 40,
       title: `${currentLabel} change in views on the United States`,

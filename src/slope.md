@@ -10,10 +10,13 @@ import { slopeTimer } from "./slopeTimer.js";
 ```
 
 ```js
-// const opEurope = FileAttachment("./data/op_europe.csv").csv();
-const opEurope = FileAttachment("./data/op_world.csv").csv();
+const opWorld = FileAttachment("./data/op_world.csv").csv();
 ```
 
-<div class="w-full">
-    ${resize((width) => slopeTimer(opEurope, "low", { width }))}
+<div class="grid grid-cols-3">
+    <div class="col-span-1 col-start-1 ...">
+    </div> 
+    <div class="col-span-1 col-start-2 ...">
+        ${resize((width) => slopeTimer(opWorld, "low", { width }))}
+</div>
 </div>
