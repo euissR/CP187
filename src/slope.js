@@ -4,21 +4,9 @@ import * as d3 from "npm:d3";
 export function slope(data, range, { width = 1000 } = {}) {
   // calculate values for diff range
   const min =
-    range === "low"
-      ? -100
-      : range === "low-mid"
-      ? -20
-      : range === "high"
-      ? 0
-      : 15;
+    range === "low" ? -100 : range === "mid" ? -20 : range === "high" ? 0 : 15;
   const max =
-    range === "low"
-      ? -20
-      : range === "low-mid"
-      ? 0
-      : range === "high"
-      ? 20
-      : -100;
+    range === "low" ? -20 : range === "mid" ? 0 : range === "high" ? 20 : -100;
   // Color scale matching your R plot
   const colorScale = d3
     .scaleLinear()
