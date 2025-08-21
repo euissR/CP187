@@ -35,8 +35,6 @@ const animationDuration = 3000;
 // );
 ```
 
-# US average effective tariff rate
-
 <div class="w-full">
   ${resize((width) => tariffsEU(data, { width, animationDuration }))}
 </div>

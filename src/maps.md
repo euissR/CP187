@@ -18,8 +18,6 @@ const opCoast = FileAttachment("./data/op_coast.geojson").json();
 const opWorld = FileAttachment("./data/op_world.csv").csv();
 ```
 
-# The effects
-
 <div class="grid grid-cols-3">
     <div class="grid-colspan-2">
         ${resize((width) => maps(opEurope, opCoast, { width }))}

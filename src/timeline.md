@@ -37,8 +37,6 @@ const animationDuration = 100000 / timelineData.length;
 
 <!-- # Trump 2.0 timeline -->
 
-# The shocks of 2025: values and unpredictability
-
 <div class="timeline-container">
 ${resize((width) => timeline(timelineData, animationDuration, { width }))}
 </div>
