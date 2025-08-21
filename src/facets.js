@@ -2,7 +2,7 @@ import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
 export function facets(data, { width = 1000 } = {}) {
-  // Color scale matching your R plot
+  console.log("Creating facets plot with data:", data); // Color scale matching your R plot
   const colorScale = d3
     .scaleLinear()
     .domain([-32, -20, -10, 0, 8, 32])
@@ -12,7 +12,8 @@ export function facets(data, { width = 1000 } = {}) {
   const plot = Plot.plot({
     width: width,
     height: 500,
-    projection: "stereographic",
+    x: { ticks: [], label: null },
+    y: { ticks: [], label: null },
     fy: { label: null },
     fx: { label: null },
     title: "Transatlantic rupture?",
@@ -29,12 +30,23 @@ export function facets(data, { width = 1000 } = {}) {
     },
     marks: [
       // Country fills based on diff values
-      Plot.geo(data, {
+      // Plot.geo(data, {
+      //   fill: "value",
+      //   fx: "facet",
+      //   fy: "Country",
+      //   tip: true,
+      //   title: (d) => `${d.Country}\n: ${d.value}%`,
+      // }),
+      Plot.areaX(data, {
+        x: "lon_zero",
+        y: "lat_zero",
+        z: "group", // Group individual polygons
         fill: "value",
+        stroke: "white",
+        strokeWidth: 0.5,
         fx: "facet",
         fy: "Country",
-        tip: true,
-        title: (d) => `${d.Country}\n: ${d.value}%`,
+        curve: "linear-closed", // Closes the polygon
       }),
     ],
   });

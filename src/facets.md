@@ -10,8 +10,8 @@ import { facets } from "./facets.js";
 ```
 
 ```js
-// const opEurope = FileAttachment("./data/op_europe.csv").csv();
-const opEurope = FileAttachment("./data/op_europe_facet.geojson").json();
+const opEurope = FileAttachment("./data/op_europe.csv").csv();
+// const opEurope = FileAttachment("./data/op_europe_facet.geojson").json();
 ```
 
 <div class="w-full">
