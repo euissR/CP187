@@ -49,9 +49,10 @@ export function tariffsEU(data, { width = 1000 } = {}) {
 
   const plot = Plot.plot({
     width: width,
-    height: 500,
-    title: "Rollercoaster?",
-    subtitle: "US tariffs on the EU in 2025, %",
+    height: width * 0.45,
+    // title: "Rollercoaster?",
+    title: "US tariffs on the EU in 2025",
+    subtitle: "%",
     caption:
       "Data: Historical Statistics of the United States Ea424-434, Monthly Treasury Statement, Bureau of Economic Analysis, The Budget Lab analysis. Federal Reserve bank of Minneapolis, 2025",
     marginLeft: 60,
