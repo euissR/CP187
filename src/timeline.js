@@ -22,7 +22,7 @@ export function timeline(
   // Set up dimensions
   const margin = { top: 120, right: 200, bottom: 80, left: 100 };
   const innerWidth = width - margin.left - margin.right;
-  const height = window.innerHeight * 0.8;
+  const height = window.innerHeight * 0.95;
   const innerHeight = height - margin.top - margin.bottom;
 
   // Create SVG
@@ -46,72 +46,76 @@ export function timeline(
     .range([-20, innerHeight - 50]);
 
   // const types = [...new Set(data.map(d => d.type))];
-  const actors = [...new Set(data.map((d) => d.actor))];
-  const actorSimple = [...new Set(data.map((d) => d.actorSimple))];
-  const colorScale = d3.scaleOrdinal(["#000", "#309ebe"]).domain(actorSimple);
+  // const actors = [...new Set(data.map((d) => d.actor))];
+  const area = [...new Set(data.map((d) => d.area))];
+  // console.log("Area:", area);
+  const colorScale = d3
+    .scaleOrdinal(["#1d3956", "#309ebe", "#df3144", "#595959"])
+    .domain(area);
 
   // Set up x scale for areas
-  const areas = [...new Set(data.map((d) => d.area))];
+  // const areas = [...new Set(data.map((d) => d.area))];
   // const actorsSimple = [...new Set(data.map(d => d.actorSimple))];
   const xScale = d3
     .scalePoint()
-    .domain(areas)
+    .domain(area)
     .range([0, innerWidth])
     .padding(0.1);
 
   // Add area labels at the top
   g.selectAll(".area-label")
-    .data(areas)
+    .data(area)
     .enter()
     .append("text")
     .attr("class", "area-label")
     .attr("x", (d) => xScale(d))
     .attr("y", -100)
     .attr("text-anchor", "middle")
-    .style("font-size", "14px")
-    .style("font-weight", "600")
-    // .style("fill", "#333")
-    .style("fill", (d) => colorScale(d.actorSimple))
-    .call(function (selection) {
-      selection.each(function (d) {
-        d3.select(this).call(wrapText, d, 20, d);
-      });
-    });
+    .style("font-size", "16px")
+    .style("font-weight", "700")
+    // .style("color", "#ddd")
+    .style("color", (d) => colorScale(d))
+    .text((d) => d);
+  // .call(function (selection) {
+  //   selection.each(function (d) {
+  //     d3.select(this).call(wrapText, d, 20, d);
+  //   });
+  // });
 
   // Add legend
-  const legend = g
-    .append("g")
-    .attr("class", "legend")
-    .attr(
-      "transform",
-      `translate(${innerWidth / 2 - 100}, ${innerHeight + 50})`
-    );
+  // const legend = g
+  //   .append("g")
+  //   .attr("class", "legend")
+  //   .attr(
+  //     "transform",
+  //     `translate(${innerWidth / 2 - 100}, ${innerHeight + 50})`
+  //   );
 
-  const legendItems = legend
-    .selectAll(".legend-item")
-    .data(actorSimple)
-    .enter()
-    .append("g")
-    .attr("class", "legend-item")
-    .attr("transform", (d, i) => `translate(${i * 200}, 0)`);
+  // const legendItems = legend
+  //   .selectAll(".legend-item")
+  //   .data(actorSimple)
+  //   .enter()
+  //   .append("g")
+  //   .attr("class", "legend-item")
+  //   .attr("transform", (d, i) => `translate(${i * 200}, 0)`);
 
-  legendItems
-    .append("circle")
-    .attr("r", 8)
-    .attr("fill", (d) => colorScale(d))
-    .attr("stroke", "white")
-    .attr("stroke-width", 2);
+  // legendItems
+  //   .append("circle")
+  //   .attr("r", 8)
+  //   .attr("fill", (d) => colorScale(d))
+  //   .attr("stroke", "white")
+  //   .attr("stroke-width", 2);
 
-  legendItems
-    .append("text")
-    .attr("x", 15)
-    .attr("y", 4)
-    .attr("text-anchor", "start")
-    .attr("dominant-baseline", "middle")
-    .style("font-size", "14px")
-    .style("font-weight", "600")
-    .style("fill", "#333")
-    .text((d) => d);
+  // legendItems
+  //   .append("text")
+  //   .attr("x", 15)
+  //   .attr("y", 4)
+  //   .attr("text-anchor", "start")
+  //   .attr("dominant-baseline", "middle")
+  //   .style("font-size", "14px")
+  //   .style("font-weight", "600")
+  //   .style("fill", "#333")
+  //   .text((d) => d);
 
   // Add timeline axis (vertical line for each area)
   // g.selectAll(".timeline-axis")
@@ -166,7 +170,7 @@ export function timeline(
       .append("circle")
       .attr("class", "event-dot")
       .attr("r", 0)
-      .attr("fill", colorScale(d.actorSimple))
+      .attr("fill", colorScale(d.area))
       .attr("stroke", "white")
       .attr("stroke-width", 2)
       .style("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
@@ -292,7 +296,7 @@ export function timeline(
       .append("tspan")
       .attr("x", x) // Use original x position
       .attr("dy", (d, i) => (i === 0 ? `${yOffset}em` : `${lineHeight}em`))
-      .style("fill", colorScale(dataObj.actorSimple)) // Use the data object here
+      .style("fill", colorScale(dataObj.area)) // Use the data object here
       .text((d) => d);
   }
 

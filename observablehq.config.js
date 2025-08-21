@@ -24,6 +24,7 @@ export default {
 
   // Some additional configuration options and their defaults:
   theme: "air", // try "light", "dark", "slate", etc.
+  style: "style.css", // path to the CSS file for custom styles
   // header: "", // what to show in the header (HTML)
   footer: false, // what to show in the footer (HTML)
   sidebar: false, // whether to show the sidebar

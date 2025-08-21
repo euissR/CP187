@@ -2,7 +2,7 @@ import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
 export function maps(data, coast, { width = 1000 } = {}) {
-  console.log("Creating facets plot with data:", data); // Color scale matching your R plot
+  //   console.log("Creating facets plot with data:", data); // Color scale matching your R plot
   const colorScale = d3
     .scaleLinear()
     .domain([-32, -20, -10, 0, 8, 32])
@@ -63,15 +63,33 @@ export function maps(data, coast, { width = 1000 } = {}) {
   const polygonData = geoToPolygons(data);
   console.log(
     "Polygon data:",
-    polygonData.filter((d) => d.Country === "Germany" && d.year === 2016)
+    polygonData.filter((d) => d.Country === "France" && d.year === 2016)
   ); // Log the processed polygon data
 
+  const facetLabels = Array.from(
+    new Set(
+      polygonData.map((d) => `${d.facet}-${d.Country}-${d.year}-${d.president}`)
+    )
+  )
+    .map((combo) => {
+      const [facet, country, year, president] = combo.split("-");
+      return { facet, Country: country, year, president };
+    })
+    .filter((d) => d.Country == "France");
+  console.log("array:", facetLabels);
+
   const plot = Plot.plot({
-    width: 600,
-    height: 600,
-    marginLeft: 60,
-    aspectRatio: 1, // This is equivalent to coord_equal()
-    title: "Transatlantic rupture?",
+    width: width * 0.66,
+    height: width * 0.66,
+    // width: width * 0.45,
+    // height: width * 0.45,
+    marginLeft: width / 5,
+    // marginLeft: width / 10,
+    // marginRight: width / 10,
+    marginBottom: width / 15,
+    // aspectRatio: 1, // This is equivalent to coord_equal()
+    title: "US favourability drops",
+    // title: "Transatlantic rupture?",
     subtitle:
       "Share of citizens who have a favourable view of \nthe United States, for selected European countries",
     caption: "Data: PEW, 2025",
@@ -80,7 +98,12 @@ export function maps(data, coast, { width = 1000 } = {}) {
     //   x: "facet",
     //   y: "Country",
     // },
-    facet: { label: null, facetAnchor: "top-left" },
+    facet: {
+      data: polygonData,
+      //   x: "year",
+      //   y: "Country",
+      label: null,
+    },
     // fy: { label: null },
     x: { type: "linear", axis: null },
     y: { type: "linear", axis: null },
@@ -96,13 +119,33 @@ export function maps(data, coast, { width = 1000 } = {}) {
         x: "x",
         y: "y",
         z: "group", // Group by country-year combination
-        fx: "facet",
+        fx: (d) => `${d.year}`,
         fy: "Country",
         stroke: "white",
         strokeWidth: 0.5,
         fill: "value", // Fill the polygon
         curve: "linear-closed", // Closes the polygon
       }),
+      // Custom facet labels at the top
+      // Custom facet labels at the top
+      Plot.text(
+        // unique combinations for labels
+        facetLabels,
+        {
+          fx: (d) => `${d.year}`,
+          fy: "Country",
+          x: () => 7, // Center horizontally (adjust as needed)
+          y: () => 12, // Above the plot area (adjust as needed)
+          text: "president",
+          //   dx: 20,
+          //   dy: -20,
+          textAnchor: "middle",
+          fontSize: 12,
+          fontWeight: "bold",
+          fill: "#333",
+        }
+      ),
+      //   Plot.frame(polygonData.filter((d) => d.year === 2016)),
     ],
   });
 

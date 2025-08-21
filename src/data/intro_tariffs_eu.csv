@@ -1,0 +1,59 @@
+date,note,type,value
+2025-01-20,NA,baseline,4.8
+2025-01-20,NA,steel,10
+2025-01-20,NA,cars,2.5
+2025-03-11,NA,baseline,4.8
+2025-03-11,NA,steel,10
+2025-03-11,NA,cars,2.5
+2025-03-12,NA,baseline,4.8
+2025-03-12,NA,steel,25
+2025-03-12,NA,cars,2.5
+2025-04-02,"""Liberation Day"" reciprocal tariff",baseline,4.8
+2025-04-02,"""Liberation Day"" reciprocal tariff",threat,20
+2025-04-02,"""Liberation Day"" reciprocal tariff",steel,25
+2025-04-02,"""Liberation Day"" reciprocal tariff",cars,2.5
+2025-04-03,NA,baseline,4.8
+2025-04-03,NA,steel,25
+2025-04-03,NA,cars,25
+2025-04-08,NA,baseline,4.8
+2025-04-08,NA,steel,25
+2025-04-08,NA,cars,25
+2025-04-09,NA,baseline,10
+2025-04-09,NA,steel,25
+2025-04-09,NA,cars,25
+2025-05-23,Trump threatens 50% tariff across the board,baseline,10
+2025-05-23,Trump threatens 50% tariff across the board,threat,50
+2025-05-23,Trump threatens 50% tariff across the board,steel,25
+2025-05-23,Trump threatens 50% tariff across the board,cars,25
+2025-06-03,NA,baseline,10
+2025-06-03,NA,steel,25
+2025-06-03,NA,cars,25
+2025-06-04,NA,baseline,10
+2025-06-04,NA,steel,50
+2025-06-04,NA,cars,25
+2025-07-12,Letter announcing 30% tariffs,baseline,10
+2025-07-12,Letter announcing 30% tariffs,threat,30
+2025-07-12,Letter announcing 30% tariffs,steel,50
+2025-07-12,Letter announcing 30% tariffs,cars,25
+2025-07-13,NA,baseline,10
+2025-07-13,NA,steel,50
+2025-07-13,NA,cars,25
+2025-07-27,US-EU deal announced,baseline,10
+2025-07-27,US-EU deal announced,threat,15
+2025-07-27,US-EU deal announced,steel,50
+2025-07-27,US-EU deal announced,cars,25
+2025-07-31,NA,baseline,10
+2025-07-31,NA,steel,50
+2025-07-31,NA,cars,25
+2025-08-01,NA,baseline,15
+2025-08-01,NA,steel,50
+2025-08-01,NA,cars,25
+2025-08-06,NA,baseline,15
+2025-08-06,NA,steel,50
+2025-08-06,NA,cars,25
+2025-08-07,NA,baseline,15
+2025-08-07,NA,steel,50
+2025-08-07,NA,cars,15
+2025-08-31,NA,baseline,15
+2025-08-31,NA,steel,50
+2025-08-31,NA,cars,15

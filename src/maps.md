@@ -7,19 +7,24 @@ sidebar: false
 
 ```js
 import { maps } from "./maps.js";
-// import * as d3 from "npm:d3";
+import { slopeTimer } from "./slopeTimer.js";
 ```
 
 ```js
 // const opEurope = FileAttachment("./data/op_europe.csv").csv();
 const opEurope = FileAttachment("./data/op_europe_facet.geojson").json();
 const opCoast = FileAttachment("./data/op_coast.geojson").json();
+// for slope
+const opWorld = FileAttachment("./data/op_world.csv").csv();
 ```
 
+# The effects
+
 <div class="grid grid-cols-3">
-    <div class="col-span-1 col-start-1 ...">
-    </div> 
-    <div class="col-span-1 col-start-2 ...">
-    ${resize((width) => maps(opEurope, opCoast, { width }))}
-</div>
+    <div class="grid-colspan-2">
+        ${resize((width) => maps(opEurope, opCoast, { width }))}
+    </div>
+    <div class="...">
+        ${resize((width) => slopeTimer(opWorld, "high", { width }))}
+    </div>
 </div>

@@ -9,7 +9,8 @@ export function slopeTimer(data, { width = 1000 } = {}) {
     .style("font-family", "sans-serif");
 
   // Range values to cycle through
-  const ranges = ["low", "mid", "high"];
+  // const ranges = ["low", "low-mid", "mid", "high"];
+  const ranges = ["high", "mid", "low-mid", "low"];
   let currentRangeIndex = 0;
   let timer;
 
@@ -25,21 +26,25 @@ export function slopeTimer(data, { width = 1000 } = {}) {
     const min =
       range === "low"
         ? -100
-        : range === "mid"
+        : range === "low-mid"
         ? -20
+        : range === "mid"
+        ? -10
         : range === "high"
         ? 0
         : 15;
     const max =
       range === "low"
         ? -20
+        : range === "low-mid"
+        ? -10
         : range === "mid"
         ? 0
         : range === "high"
         ? 20
         : -100;
 
-    console.log(`Current range: ${range}, min: ${min}, max: ${max}`);
+    // console.log(`Current range: ${range}, min: ${min}, max: ${max}`);
 
     const slopeData = data
       .map((d) => ({
@@ -52,14 +57,16 @@ export function slopeTimer(data, { width = 1000 } = {}) {
 
     const plot = Plot.plot({
       width: width / 2,
-      height: 600,
+      height: width * 0.715,
       // marginLeft: width / 8,
       // marginRight: width / 8,
       marginTop: 40,
       marginBottom: 40,
-      title: "Change in views on the United States",
-      subtitle: "2024-2025, % of favorable views",
-      caption: "Data: PEW, 2025",
+      // title: "Change in views on the United States",
+      title: "...and across the world",
+      subtitle: "2024-2025",
+      // subtitle: "2024-2025, % of favorable views",
+      // caption: "Data: PEW, 2025",
       x: {
         domain: ["2024", "2025"],
         tickSize: 0,
@@ -71,9 +78,10 @@ export function slopeTimer(data, { width = 1000 } = {}) {
       },
       color: {
         type: "linear",
-        domain: [-32, 32],
+        // domain: [-32, 32],
+        domain: [5, 95],
         range: ["#df3144", "#ffde75", "#eee", "#64C2C7", "#376882"],
-        legend: true,
+        legend: false,
         // label: "Favorable view, %",
         label: null,
       },
@@ -84,18 +92,19 @@ export function slopeTimer(data, { width = 1000 } = {}) {
           x2: (d) => "2025",
           y1: "value2024",
           y2: "value2025",
-          stroke: "diff",
-          strokeWidth: 2,
+          stroke: "value2025",
+          strokeWidth: 1,
+          strokeOpacity: 0.5,
         }),
 
         // 2024 points
         Plot.dot(slopeData, {
           x: () => "2024",
           y: "value2024",
-          fill: "diff",
+          fill: "value2024",
           stroke: "white",
           strokeWidth: 1,
-          r: 4,
+          r: 3,
           tip: true,
           title: (d) => `${d.country}`,
         }),
@@ -104,14 +113,39 @@ export function slopeTimer(data, { width = 1000 } = {}) {
         Plot.dot(slopeData, {
           x: () => "2025",
           y: "value2025",
-          fill: "diff",
+          fill: "value2025",
           stroke: "white",
           strokeWidth: 1,
-          r: 4,
+          r: 3,
           tip: true,
           title: (d) => `${d.country}`,
         }),
 
+        // highlights
+        Plot.link(
+          slopeData.filter((d) => d.diff < max && d.diff > min),
+          {
+            x1: (d) => "2024",
+            x2: (d) => "2025",
+            y1: "value2024",
+            y2: "value2025",
+            stroke: "value2025",
+            strokeWidth: 2,
+          }
+        ),
+        Plot.dot(
+          slopeData.filter((d) => d.diff < max && d.diff > min),
+          {
+            x: () => "2025",
+            y: "value2025",
+            fill: "value2025",
+            stroke: "white",
+            strokeWidth: 1,
+            r: 5,
+            tip: true,
+            title: (d) => `${d.country}`,
+          }
+        ),
         Plot.text(
           slopeData.filter((d) => d.diff < max && d.diff > min),
           {
@@ -141,8 +175,10 @@ export function slopeTimer(data, { width = 1000 } = {}) {
     const currentLabel =
       ranges[currentRangeIndex] === "low"
         ? "Very negative"
-        : ranges[currentRangeIndex] === "mid"
+        : ranges[currentRangeIndex] === "low-mid"
         ? "Negative"
+        : ranges[currentRangeIndex] === "mid"
+        ? "Mildly negative"
         : "Positive";
 
     // Create new plot
@@ -158,7 +194,7 @@ export function slopeTimer(data, { width = 1000 } = {}) {
     updatePlot();
 
     // Set up timer to update every 10 seconds
-    timer = setInterval(updatePlot, 10000);
+    timer = setInterval(updatePlot, 5000);
   }
 
   function stopTimer() {

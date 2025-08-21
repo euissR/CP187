@@ -32,10 +32,12 @@ const timelineData = FileAttachment("./data/intro_trump2.csv").csv({
 //     step: 100,
 //   })
 // );
-const animationDuration = 120000 / timelineData.length;
+const animationDuration = 100000 / timelineData.length;
 ```
 
 <!-- # Trump 2.0 timeline -->
+
+# The shocks of 2025: values and unpredictability
 
 <div class="timeline-container">
 ${resize((width) => timeline(timelineData, animationDuration, { width }))}

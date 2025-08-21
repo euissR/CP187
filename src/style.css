@@ -1,0 +1,41 @@
+@import url("observablehq:default.css");
+@import url("observablehq:theme-air.css");
+
+* {
+    font-family: 'PT Sans', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'PT Sans', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+width: 80% !important;
+max-width: 80%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    width: 100% !important;
+    max-width: 100%;
+}
