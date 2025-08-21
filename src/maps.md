@@ -16,6 +16,10 @@ const opEurope = FileAttachment("./data/op_europe_facet.geojson").json();
 const opCoast = FileAttachment("./data/op_coast.geojson").json();
 ```
 
-<div class="w-full">
+<div class="grid grid-cols-3">
+    <div class="col-span-1 col-start-1 ...">
+    </div> 
+    <div class="col-span-1 col-start-2 ...">
     ${resize((width) => maps(opEurope, opCoast, { width }))}
+</div>
 </div>
