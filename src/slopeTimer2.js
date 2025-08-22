@@ -1,7 +1,7 @@
 import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
-export function slopeTimer(data, { width = 1000 } = {}) {
+export function slopeTimer2(data, { width = 1000 } = {}) {
   // Create container for the plot
   const container = d3
     .create("div")
@@ -78,12 +78,10 @@ export function slopeTimer(data, { width = 1000 } = {}) {
       },
       color: {
         type: "linear",
-        // domain: [-32, 32],
-        domain: [0, 100],
+        domain: [-32, 32],
         range: ["#df3144", "#ffde75", "#eee", "#64C2C7", "#376882"],
         legend: true,
-        // label: "Favorable view, %",
-        label: null,
+        label: "Change 2024-2025, %-points",
       },
       marks: [
         // Lines connecting 2024 to 2025
@@ -92,28 +90,16 @@ export function slopeTimer(data, { width = 1000 } = {}) {
           x2: (d) => "2025",
           y1: "value2024",
           y2: "value2025",
-          stroke: "value2025",
+          stroke: "diff",
           strokeWidth: 1,
           strokeOpacity: 0.5,
-        }),
-
-        // 2024 points
-        Plot.dot(slopeData, {
-          x: () => "2024",
-          y: "value2024",
-          fill: "value2024",
-          stroke: "white",
-          strokeWidth: 1,
-          r: 3,
-          tip: true,
-          title: (d) => `${d.country}`,
         }),
 
         // 2025 points
         Plot.dot(slopeData, {
           x: () => "2025",
           y: "value2025",
-          fill: "value2025",
+          fill: "diff",
           stroke: "white",
           strokeWidth: 1,
           r: 3,
@@ -129,7 +115,7 @@ export function slopeTimer(data, { width = 1000 } = {}) {
             x2: (d) => "2025",
             y1: "value2024",
             y2: "value2025",
-            stroke: "value2025",
+            stroke: "diff",
             strokeWidth: 2,
           }
         ),
@@ -138,7 +124,7 @@ export function slopeTimer(data, { width = 1000 } = {}) {
           {
             x: () => "2025",
             y: "value2025",
-            fill: "value2025",
+            fill: "diff",
             stroke: "white",
             strokeWidth: 1,
             r: 5,

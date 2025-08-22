@@ -109,7 +109,7 @@ export function maps(data, coast, { width = 1000 } = {}) {
     y: { type: "linear", axis: null },
     color: {
       type: "linear",
-      domain: [5, 95],
+      domain: [0, 100],
       range: ["#df3144", "#ffde75", "#eee", "#64C2C7", "#376882"],
       label: "%",
       legend: true,
