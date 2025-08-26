@@ -27,7 +27,7 @@ export function slope(data, range, { width = 1000 } = {}) {
   console.log(slopeData);
   const plot = Plot.plot({
     width: width,
-    height: 600,
+    height: width / 2,
     marginLeft: width / 4,
     marginRight: width / 4,
     marginTop: 40,

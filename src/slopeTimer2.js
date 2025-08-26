@@ -74,7 +74,7 @@ export function slopeTimer2(data, { width } = {}) {
       },
       y: {
         grid: true,
-        ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+        ticks: [10, 20, 30, 40, 50, 60, 70, 80, 90],
         domain: [10, 90],
       },
       color: {

@@ -13,8 +13,9 @@ import { slopeTimer2 } from "./slopeTimer2.js";
 const opWorld = FileAttachment("./data/op_world.csv").csv();
 ```
 
-<div class="fullscreen-container">
-    <div class="centered-content">
+<div class="grid grid-cols-4">
+  <div class="gird-colspan-1"></div>
+  <div class="grid-colspan-2">
         ${resize((width) => slopeTimer2(opWorld, "high", { width }))}
     </div>
 </div>
