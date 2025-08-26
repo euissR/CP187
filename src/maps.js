@@ -1,7 +1,9 @@
 import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
-export function maps(data, coast, { width = 1000 } = {}) {
+export function maps(data, coast, { width } = {}) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
   //   console.log("Creating facets plot with data:", data); // Color scale matching your R plot
   const colorScale = d3
     .scaleLinear()
@@ -79,15 +81,8 @@ export function maps(data, coast, { width = 1000 } = {}) {
   console.log("array:", facetLabels);
 
   const plot = Plot.plot({
-    width: width * 0.66,
-    height: width * 0.66,
-    // width: width * 0.45,
-    // height: width * 0.45,
-    marginLeft: width / 5,
-    // marginLeft: width / 10,
-    // marginRight: width / 10,
-    marginBottom: width / 15,
-    // aspectRatio: 1, // This is equivalent to coord_equal()
+    width: vw / 2.5,
+    height: vw / 2.5,
     title: "US favourability drops",
     // title: "Transatlantic rupture?",
     subtitle:

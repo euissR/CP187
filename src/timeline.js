@@ -1,10 +1,8 @@
 import * as d3 from "npm:d3";
 
-export function timeline(
-  timelineData,
-  animationDuration,
-  { width = 1000 } = {}
-) {
+export function timeline(timelineData, animationDuration, { width } = {}) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
   // Process the data
   const data = timelineData
     .map((d) => ({
@@ -20,17 +18,17 @@ export function timeline(
     .sort((a, b) => a.id - b.id);
 
   // Set up dimensions
-  const margin = { top: 120, right: 200, bottom: 80, left: 100 };
-  const innerWidth = width - margin.left - margin.right;
-  const height = window.innerHeight * 0.95;
+  const margin = { top: 150, right: 200, bottom: 80, left: 200 };
+  const innerWidth = vh - margin.left - margin.right;
+  const height = window.innerHeight * 0.85;
   const innerHeight = height - margin.top - margin.bottom;
 
   // Create SVG
   const svg = d3
     .create("svg")
-    .attr("width", width)
+    .attr("width", vh)
     .attr("height", height)
-    .attr("viewBox", [0, 0, width, height])
+    .attr("viewBox", [0, 0, vh, height])
     .style("max-width", "100%")
     .style("height", "auto");
 

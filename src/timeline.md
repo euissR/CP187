@@ -35,8 +35,12 @@ const timelineData = FileAttachment("./data/intro_trump2.csv").csv({
 const animationDuration = 100000 / timelineData.length;
 ```
 
-<!-- # Trump 2.0 timeline -->
+<div class="fullscreen-container">
+  <div class="centered-content">
+  <h1>How the actions of Trump II led to mistrust</h1>
+    <div class="timeline-container">
+    ${resize((width) => timeline(timelineData, animationDuration, { width }))}
+    </div>
 
-<div class="timeline-container">
-${resize((width) => timeline(timelineData, animationDuration, { width }))}
+  </div>
 </div>

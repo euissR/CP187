@@ -6,14 +6,17 @@ sidebar: false
 ---
 
 ```js
-import { facets } from "./facets.js";
+import { maps } from "./maps.js";
 ```
 
 ```js
-const opEurope = FileAttachment("./data/op_europe.csv").csv();
-// const opEurope = FileAttachment("./data/op_europe_facet.geojson").json();
+// const opEurope = FileAttachment("./data/op_europe.csv").csv();
+const opEurope = FileAttachment("./data/op_europe_facet.geojson").json();
+const opCoast = FileAttachment("./data/op_coast.geojson").json();
 ```
 
-<div class="w-full">
-    ${resize((width) => facets(opEurope, { width }))}
+<div class="fullscreen-container">
+    <div class="centered-content">
+        ${resize((width) => maps(opEurope, opCoast, { width }))}
+    </div>
 </div>

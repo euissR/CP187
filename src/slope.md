@@ -6,17 +6,15 @@ sidebar: false
 ---
 
 ```js
-import { slopeTimer } from "./slopeTimer.js";
+import { slopeTimer2 } from "./slopeTimer2.js";
 ```
 
 ```js
 const opWorld = FileAttachment("./data/op_world.csv").csv();
 ```
 
-<div class="grid grid-cols-3">
-    <div class="col-span-1 col-start-1 ...">
-    </div> 
-    <div class="col-span-1 col-start-2 ...">
-        ${resize((width) => slopeTimer(opWorld, "low", { width }))}
-</div>
+<div class="fullscreen-container">
+    <div class="centered-content">
+        ${resize((width) => slopeTimer2(opWorld, "high", { width }))}
+    </div>
 </div>

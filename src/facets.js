@@ -1,8 +1,10 @@
 import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
-export function facets(data, { width = 1000 } = {}) {
-  console.log("Creating facets plot with data:", data); // Color scale matching your R plot
+export function facets(data, { width } = {}) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  // console.log("Creating facets plot with data:", data); // Color scale matching your R plot
   const colorScale = d3
     .scaleLinear()
     .domain([-32, -20, -10, 0, 8, 32])
@@ -10,8 +12,8 @@ export function facets(data, { width = 1000 } = {}) {
     .interpolate(d3.interpolateRgb);
 
   const plot = Plot.plot({
-    width: width,
-    height: 500,
+    width: vw,
+    height: vh,
     x: { ticks: [], label: null },
     y: { ticks: [], label: null },
     fy: { label: null },

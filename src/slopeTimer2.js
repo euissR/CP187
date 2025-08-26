@@ -1,7 +1,9 @@
 import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
-export function slopeTimer2(data, { width = 1000 } = {}) {
+export function slopeTimer2(data, { width } = {}) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
   // Create container for the plot
   const container = d3
     .create("div")
@@ -56,17 +58,14 @@ export function slopeTimer2(data, { width = 1000 } = {}) {
       .sort((a, b) => b.value2025 - a.value2025);
 
     const plot = Plot.plot({
-      width: width / 2,
-      height: width * 0.715,
-      // marginLeft: width / 8,
-      // marginRight: width / 8,
+      width: vw / 3,
+      height: vh * 0.8,
       marginTop: 40,
       marginBottom: 40,
-      // title: "Change in views on the United States",
-      title: "...and across the world",
-      subtitle: "2024-2025",
-      // subtitle: "2024-2025, % of favorable views",
-      // caption: "Data: PEW, 2025",
+      title: "Change in views on the United States",
+      title: "...and ",
+      subtitle: "Selected countries, 2024-2025",
+      caption: "Data: PEW, 2025",
       x: {
         domain: ["2024", "2025"],
         tickSize: 0,
@@ -75,6 +74,8 @@ export function slopeTimer2(data, { width = 1000 } = {}) {
       },
       y: {
         grid: true,
+        ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+        domain: [10, 90],
       },
       color: {
         type: "linear",
@@ -102,6 +103,7 @@ export function slopeTimer2(data, { width = 1000 } = {}) {
           fill: "diff",
           stroke: "white",
           strokeWidth: 1,
+          opacity: 0.5,
           r: 3,
           tip: true,
           title: (d) => `${d.country}`,
@@ -116,7 +118,7 @@ export function slopeTimer2(data, { width = 1000 } = {}) {
             y1: "value2024",
             y2: "value2025",
             stroke: "diff",
-            strokeWidth: 2,
+            strokeWidth: 3,
           }
         ),
         Plot.dot(
@@ -127,7 +129,7 @@ export function slopeTimer2(data, { width = 1000 } = {}) {
             fill: "diff",
             stroke: "white",
             strokeWidth: 1,
-            r: 5,
+            r: 6,
             tip: true,
             title: (d) => `${d.country}`,
           }
@@ -142,7 +144,7 @@ export function slopeTimer2(data, { width = 1000 } = {}) {
             textAnchor: "start",
             fontWeight: "bold",
             dx: 10,
-            fontSize: 11,
+            fontSize: 12,
             fill: "#333",
           }
         ),
