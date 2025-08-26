@@ -63,7 +63,6 @@ export function slopeTimer2(data, { width } = {}) {
       marginTop: 40,
       marginBottom: 40,
       title: "Change in views on the United States",
-      title: "...and ",
       subtitle: "Selected countries, 2024-2025",
       caption: "Data: PEW, 2025",
       x: {

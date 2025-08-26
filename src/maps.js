@@ -81,8 +81,8 @@ export function maps(data, coast, { width } = {}) {
   console.log("array:", facetLabels);
 
   const plot = Plot.plot({
-    width: vw / 2.5,
-    height: vw / 2.5,
+    width: vw / 3.1,
+    height: vw / 2.6,
     title: "US favourability drops",
     // title: "Transatlantic rupture?",
     subtitle:
