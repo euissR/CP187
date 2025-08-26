@@ -24,6 +24,8 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Check npm registry connectivity
+        run: curl -I https://registry.npmjs.org/
       - run: npm ci
       - id: date
         run: echo "date=$(TZ=CET date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
@@ -32,7 +34,7 @@ jobs:
         with:
           path: src/.observablehq/cache
           key: data-${{ hashFiles('src/data/*') }}-${{ steps.date.outputs.date }}
-      - run: npm run build
+      - run: npm run build:debug
       # Debug step to check what was built
       - name: Debug dist contents
         run: |

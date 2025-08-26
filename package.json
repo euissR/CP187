@@ -6,7 +6,10 @@
     "build": "observable build",
     "dev": "observable preview",
     "deploy": "observable deploy",
-    "observable": "observable"
+    "observable": "observable",
+    "build:debug": "observable build --debug",
+    "deploy:debug": "observable deploy --debug"
+
   },
   "dependencies": {
     "@observablehq/framework": "^1.13.3"
