@@ -1,7 +1,7 @@
 import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
-export function maps(data, coast, { width } = {}) {
+export function maps(data, { width } = {}) {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
   //   console.log("Creating facets plot with data:", data); // Color scale matching your R plot
@@ -15,49 +15,69 @@ export function maps(data, coast, { width } = {}) {
   const circle = d3.geoCircle().center([4, 32]).radius(radius)();
 
   function geoToPolygons(geoData) {
-    // First pass: extract all coordinates with grouping
-    const rawPolygons = geoData.features.flatMap((feature) => {
-      let allCoordinates = [];
+    // First pass: extract coordinates (fix the condition)
+    const rawData = geoData.features.flatMap((feature) => {
+      if (!feature?.geometry || !feature?.properties) return []; // Fixed this line
 
+      let allCoordinates = [];
       if (feature.geometry.type === "Polygon") {
         allCoordinates = [feature.geometry.coordinates[0]];
       } else if (feature.geometry.type === "MultiPolygon") {
         allCoordinates = feature.geometry.coordinates.map(
           (polygon) => polygon[0]
         );
-      } else {
-        return [];
       }
 
       return allCoordinates.flatMap((coordinates, polygonIndex) => {
         return coordinates.map((coord, i) => ({
           ...feature.properties,
-          lon: coord[0],
-          lat: coord[1],
-          facetGroup: `${feature.properties.Country}-${feature.properties.facet}`, // For min/max calculation
+          x: coord[0],
+          y: coord[1],
           group: `${feature.properties.Country}-${feature.properties.facet}-${polygonIndex}`,
+          facetKey: `${feature.properties.Country}-${feature.properties.facet}`,
           order: i,
         }));
       });
     });
 
-    // Second pass: calculate min values for each country-year combination
-    const minValues = d3.rollup(
-      rawPolygons,
-      (v) => ({
-        minLon: d3.min(v, (d) => d.lon),
-        minLat: d3.min(v, (d) => d.lat),
-      }),
-      (d) => d.facetGroup
-    );
+    // Second pass: calculate bounds per facet
+    const facetBounds = new Map();
 
-    // Third pass: normalize coordinates to start at (0,0)
-    return rawPolygons.map((d) => {
-      const mins = minValues.get(d.facetGroup);
+    // Group by facetKey and find bounds
+    const grouped = d3.group(rawData, (d) => d.facetKey);
+    grouped.forEach((values, key) => {
+      facetBounds.set(key, {
+        minX: d3.min(values, (d) => d.x),
+        maxX: d3.max(values, (d) => d.x),
+        minY: d3.min(values, (d) => d.y),
+        maxY: d3.max(values, (d) => d.y),
+      });
+    });
+
+    // Third pass: normalize with aspect ratio
+    return rawData.map((d) => {
+      const bounds = facetBounds.get(d.facetKey);
+      const rangeX = bounds.maxX - bounds.minX;
+      const rangeY = bounds.maxY - bounds.minY;
+
+      if (rangeX === 0 || rangeY === 0) {
+        return { ...d, x: 50, y: 50 };
+      }
+
+      // Scale to preserve aspect ratio
+      const scale = Math.min(100 / rangeX, 100 / rangeY);
+
+      const normalizedX = (d.x - bounds.minX) * scale;
+      const normalizedY = (d.y - bounds.minY) * scale;
+
+      // Center in 100x100 space
+      const centeredX = normalizedX + (100 - rangeX * scale) / 2;
+      const centeredY = normalizedY + (100 - rangeY * scale) / 2;
+
       return {
         ...d,
-        x: d.lon - mins.minLon, // lon_zero
-        y: d.lat - mins.minLat, // lat_zero
+        x: centeredX,
+        y: centeredY,
       };
     });
   }
@@ -100,8 +120,8 @@ export function maps(data, coast, { width } = {}) {
       label: null,
     },
     // fy: { label: null },
-    x: { type: "linear", axis: null },
-    y: { type: "linear", axis: null },
+    x: { type: "linear", axis: null, domain: [0, 100] },
+    y: { type: "linear", axis: null, domain: [0, 100] },
     color: {
       type: "linear",
       domain: [0, 100],
@@ -129,8 +149,8 @@ export function maps(data, coast, { width } = {}) {
         {
           fx: (d) => `${d.year}`,
           fy: "Country",
-          x: () => 7, // Center horizontally (adjust as needed)
-          y: () => 12, // Above the plot area (adjust as needed)
+          x: () => 50, // Center horizontally (adjust as needed)
+          y: () => 100, // Above the plot area (adjust as needed)
           text: "president",
           //   dx: 20,
           //   dy: -20,

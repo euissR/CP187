@@ -17,7 +17,7 @@ export function slope(data, subtitle, { width } = {}) {
 
   const plot = Plot.plot({
     width: vw / 3,
-    height: vh * 0.8,
+    height: vh * 0.75,
     marginTop: 50,
     marginBottom: 40,
     title: "Change in views on the United States",
