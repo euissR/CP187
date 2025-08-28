@@ -2,6 +2,8 @@ import * as d3 from "npm:d3";
 
 export function timeline(timelineData, animationDuration, { width } = {}) {
   const vw = window.innerWidth;
+  const marSide = vw / 10;
+  // console.log("VW:", vw);
   const vh = window.innerHeight;
   // Process the data
   const data = timelineData
@@ -18,8 +20,9 @@ export function timeline(timelineData, animationDuration, { width } = {}) {
     .sort((a, b) => a.id - b.id);
 
   // Set up dimensions
-  const margin = { top: 150, right: 200, bottom: 80, left: 200 };
-  const innerWidth = vh - margin.left - margin.right;
+  const margin = { top: 150, right: marSide, bottom: 80, left: marSide };
+  // const innerWidth = vh - margin.left - margin.right;
+  const innerWidth = vh;
   const height = window.innerHeight * 0.85;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -46,7 +49,7 @@ export function timeline(timelineData, animationDuration, { width } = {}) {
   // const types = [...new Set(data.map(d => d.type))];
   // const actors = [...new Set(data.map((d) => d.actor))];
   const area = [...new Set(data.map((d) => d.area))];
-  // console.log("Area:", area);
+  // console.log("Areas:", area[2]);
   const colorScale = d3
     .scaleOrdinal(["#1d3956", "#309ebe", "#df3144", "#595959"])
     .domain(area);
@@ -72,7 +75,7 @@ export function timeline(timelineData, animationDuration, { width } = {}) {
     .style("font-size", "16px")
     .style("font-weight", "700")
     // .style("color", "#ddd")
-    .style("color", (d) => colorScale(d))
+    .style("fill", (d) => colorScale(d))
     .text((d) => d);
   // .call(function (selection) {
   //   selection.each(function (d) {

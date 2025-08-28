@@ -1,24 +1,45 @@
-Country,year,value,iso3c,NAME_ENGL,diff
-Argentina,2025,52,ARG,Argentina,-1
-Australia,2025,29,AUS,Australia,-11
-Brazil,2025,56,BRA,Brazil,-8
-Canada,2025,34,CAN,Canada,-20
-France,2025,36,FRA,France,-10
-Germany,2025,33,DEU,Germany,-16
-Greece,2025,45,GRC,Greece,-3
-Hungary,2025,60,HUN,Hungary,8
-India,2025,54,IND,India,3
-Israel,2025,83,ISR,Israel,6
-Italy,2025,47,ITA,Italy,-9
-Japan,2025,55,JPN,Japan,-15
-Kenya,2025,62,KEN,Kenya,-16
-Mexico,2025,29,MEX,Mexico,-32
-Netherlands,2025,29,NLD,Netherlands,-19
-Nigeria,2025,78,NGA,Nigeria,6
-Poland,2025,55,POL,Poland,-31
-South Africa,2025,50,ZAF,South Africa,1
-South Korea,2025,61,KOR,South Korea,-16
-Spain,2025,31,ESP,Spain,-17
-Sweden,2025,19,SWE,Sweden,-28
-Turkey,2025,25,TUR,Türkiye,NA
-United Kingdom,2025,50,GBR,United Kingdom,-4
+Country,year,value,iso3c,NAME_ENGL,EU_STAT,diff
+Argentina,2024,53,ARG,Argentina,F,-1
+Argentina,2025,52,ARG,Argentina,F,-1
+Australia,2024,40,AUS,Australia,F,-11
+Australia,2025,29,AUS,Australia,F,-11
+Brazil,2024,64,BRA,Brazil,F,-8
+Brazil,2025,56,BRA,Brazil,F,-8
+Canada,2024,54,CAN,Canada,F,-20
+Canada,2025,34,CAN,Canada,F,-20
+France,2024,46,FRA,France,T,-10
+France,2025,36,FRA,France,T,-10
+Germany,2024,49,DEU,Germany,T,-16
+Germany,2025,33,DEU,Germany,T,-16
+Greece,2024,48,GRC,Greece,T,-3
+Greece,2025,45,GRC,Greece,T,-3
+Hungary,2024,52,HUN,Hungary,T,8
+Hungary,2025,60,HUN,Hungary,T,8
+India,2024,51,IND,India,F,3
+India,2025,54,IND,India,F,3
+Israel,2024,77,ISR,Israel,F,6
+Israel,2025,83,ISR,Israel,F,6
+Italy,2024,56,ITA,Italy,T,-9
+Italy,2025,47,ITA,Italy,T,-9
+Japan,2024,70,JPN,Japan,F,-15
+Japan,2025,55,JPN,Japan,F,-15
+Kenya,2024,78,KEN,Kenya,F,-16
+Kenya,2025,62,KEN,Kenya,F,-16
+Mexico,2024,61,MEX,Mexico,F,-32
+Mexico,2025,29,MEX,Mexico,F,-32
+Netherlands,2024,48,NLD,Netherlands,T,-19
+Netherlands,2025,29,NLD,Netherlands,T,-19
+Nigeria,2024,72,NGA,Nigeria,F,6
+Nigeria,2025,78,NGA,Nigeria,F,6
+Poland,2024,86,POL,Poland,T,-31
+Poland,2025,55,POL,Poland,T,-31
+South Africa,2024,49,ZAF,South Africa,F,1
+South Africa,2025,50,ZAF,South Africa,F,1
+South Korea,2024,77,KOR,South Korea,F,-16
+South Korea,2025,61,KOR,South Korea,F,-16
+Spain,2024,48,ESP,Spain,T,-17
+Spain,2025,31,ESP,Spain,T,-17
+Sweden,2024,47,SWE,Sweden,T,-28
+Sweden,2025,19,SWE,Sweden,T,-28
+United Kingdom,2024,54,GBR,United Kingdom,F,-4
+United Kingdom,2025,50,GBR,United Kingdom,F,-4
