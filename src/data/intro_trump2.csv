@@ -1,7 +1,7 @@
 id,date,event,graph,area,actor_simple
 1,2024-12-23,"Trump proposes annexing Greenland, Panama",NA,Relations with allies,United States
-4,2025-01-20,Freeze on US foreign aid,"USAID cuts (data in ""Aid cuts"" sheet in ""Measures of confidence in US - Ioana"")",Relations with rest of the world,United States
 7,2025-02-01,"First tariffs on Canada, Mexico, China","Tariff rate timeline (use sheet 1 from ""tariff rates"" file)",Trade,United States
+8,2025-02-11,Vance argues against EU tech regulations,NA,Relations with allies,United States
 9,2025-02-12,"Hegseth at NATO announces new US posture on Ukraine, European defence",NA,Relations with allies,United States
 10,2025-02-12,Trump speaks to Putin,NA,Russia-Ukraine,United States
 12,2025-02-14,Vance's Munich speech,NA,Relations with allies,United States
@@ -9,12 +9,14 @@ id,date,event,graph,area,actor_simple
 17,2025-02-26,Rubio cancels meeting with Kallas,NA,Relations with allies,United States
 19,2025-02-28,"Trump-Zelensky Oval Office clash, temporary intel freeze",NA,Russia-Ukraine,United States
 22,2025-03-06,EU emergency Council,NA,Relations with allies,European leaders
+24,2025-03-12,US reimposes tariffs on EU steel,NA,Trade,United States
+27,2025-03-24,"Leaked Signal chat - ""pathetic"" allies",NA,Relations with allies,United States
 30,2025-04-02,Liberation Day: 20% tariff on EU,"Tariff rate timeline (use sheet 1 from ""tariff rates"" file)",Trade,United States
 32,2025-04-09,Trump pauses reciprocal tariffs,"Dollar, S&P 500  (data in ""S&P 500"" an ""DXY"" sheets in ""Measures of confidence in US - Ioana"")",Trade,United States
 39,2025-04-30,US-Ukraine mineral deal,NA,Russia-Ukraine,United States
 41,2025-05-12,Trump threatens 50% tariffs on EU,NA,Trade,United States
-49,2025-06-04,Travel ban reinstated,"Number of flights to US (data in ""Visits or flights to the US"" sheets in ""Measures of confidence in US - Ioana"" - compare overall flights 2024 to overall flights 2025)",Relations with rest of the world,United States
-54,2025-06-21,US strikes on Iran,NA,Relations with rest of the world,United States
+52,2025-06-16,US wants Russia back at G7,NA,Relations with allies,European leaders
+56,2025-06-25,NATO Summit,NA,Relations with allies,European leaders
 57,2025-06-30,Pentagon halts weapon shipments to Ukraine for one week,NA,Russia-Ukraine,United States
 60,2025-07-12,"Trump sends ""letter"" announcing 30% tariffs on EU",NA,Trade,United States
 61,2025-07-14,"Trump threatens ""secondary tariffs"" on buyers of Russian oil",NA,Russia-Ukraine,United States

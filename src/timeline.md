@@ -32,7 +32,7 @@ const timelineData = FileAttachment("./data/intro_trump2.csv").csv({
 //     step: 100,
 //   })
 // );
-const animationDuration = 1200 / timelineData.length;
+const animationDuration = 120000 / timelineData.length;
 ```
 
 <!-- <div class="fullscreen-container">

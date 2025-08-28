@@ -187,7 +187,7 @@ export function timeline(timelineData, animationDuration, { width } = {}) {
         yScale((d) => d.date)
       )
       .attr("text-anchor", "start")
-      .attr("dominant-baseline", "middle")
+      .attr("dominant-baseline", "central")
       .style("font-size", "20px")
       .style("font-weight", "500")
       .style("font-family", "sans-serif")
@@ -197,7 +197,7 @@ export function timeline(timelineData, animationDuration, { width } = {}) {
       )
       .style("pointer-events", "none")
       .style("opacity", 0)
-      .call(wrapText, d.event, 18, d); // 30 characters per line
+      .call(wrapText, d.event, 30, d); // 30 characters per line
 
     // Add date label (to the left)
     const dateLabel = eventGroup
@@ -206,9 +206,9 @@ export function timeline(timelineData, animationDuration, { width } = {}) {
       .attr("x", -20)
       .attr("y", 4)
       .attr("text-anchor", "end")
-      .attr("dominant-baseline", "middle")
+      .attr("dominant-baseline", "central")
       .style("font-size", "16px")
-      .style("font-family", "sans-serif")
+      .style("font-family", "PT Sans Narrow, sans-serif")
       .style(
         "text-shadow",
         "2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff"
