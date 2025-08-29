@@ -72,7 +72,7 @@ export function timeline(timelineData, animationDuration, { width } = {}) {
     .attr("x", (d) => xScale(d))
     .attr("y", -100)
     .attr("text-anchor", "middle")
-    .style("font-size", "16px")
+    .style("font-size", "20px")
     .style("font-weight", "700")
     // .style("color", "#ddd")
     .style("fill", (d) => colorScale(d))
