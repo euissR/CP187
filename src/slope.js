@@ -1,7 +1,7 @@
 import * as Plot from "npm:@observablehq/plot";
 import * as d3 from "npm:d3";
 
-export function slope(data, subtitle, { width } = {}) {
+export function slope(data, title, subtitle, { width } = {}) {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
 
@@ -20,7 +20,7 @@ export function slope(data, subtitle, { width } = {}) {
     height: vh * 0.75,
     marginTop: 50,
     marginBottom: 40,
-    title: "Change in views on the United States",
+    title: title,
     subtitle: subtitle,
     caption: "Data: PEW, 2025",
     x: {

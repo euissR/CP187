@@ -33,6 +33,7 @@ console.log("opWorld", opWorld);
   <div class="grid-colspan-1"></div>
   <div class="grid-colspan-2">
         ${resize((width) => slope(opWorld, 
-        "Selected countries worldwide, 2024-2025", { width }))}
+        "We're not the only ones",
+        "Favourability of the US among selected countries worldwide, 2024-2025", { width }))}
     </div>
 </div>
